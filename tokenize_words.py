@@ -71,8 +71,9 @@ if __name__ == "__main__":
     train = load_photos(filename)
     print('Dataset: %d' % len(train))
     # descriptions
-    train_descriptions = load_clean_descriptions('./description.txt', train)
+    train_descriptions = load_clean_descriptions('./description.json', train)
     print('Descriptions: train=%d' % len(train_descriptions))
+    pickle.dump(train_descriptions, open('train_descriptions.pkl', 'wb'))
 
     # prepare tokenizer
     tokenizer = create_tokenizer(train_descriptions)
