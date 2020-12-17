@@ -1,9 +1,11 @@
+"""
+Creates a generator function, which generates the input for the model.
+"""
+
 import numpy as np
 import pickle
+
 from tensorflow import keras
-
-
-# generator function to generate inputs for model
 
 
 def create_trianing_data(captions, images, tokenizer, max_caption_length, vocab_len, photos_per_batch):
@@ -48,15 +50,16 @@ def create_trianing_data(captions, images, tokenizer, max_caption_length, vocab_
 
 if __name__ == "__main__":
     from tokenize_words import max_seq_lenght, load_clean_descriptions, load_photos
-    with open('tokenizer.pkl', 'rb') as f:
+    with open('./model_files/tokenizer.pkl', 'rb') as f:
         tok = pickle.load(f)
 
-    with open('features2.pkl', 'rb') as f:
+    with open('./model_files/features2.pkl', 'rb') as f:
         img = pickle.load(f)
 
     filename = './Flickr8k_text/Flickr_8k.trainImages.txt'
     train = load_photos(filename)
-    train_descriptions = load_clean_descriptions('./description.json', train)
+    train_descriptions = load_clean_descriptions(
+        './model_files/description.json', train)
     max_length = max_seq_lenght(train_descriptions)
     vocab_size = len(tok.word_index) + 1
     train_data = create_trianing_data(train_descriptions, img,
