@@ -1,15 +1,27 @@
+"""Read in the caption text from source data
+   Clean source captions and stored the clean data in a
+   dictionary, with the keys=image name and
+   the values = to list of clean descriptions(captions)
+   Dictionary name= descriptions.json (saved in model_files)
+
+"""
+import os
+import re
+import pickle
+
 import json
 import pandas as pd
-import os
-import pickle
-import re
 import string
-import pickle
-import _pickle as pickle
 from collections import defaultdict
 
 
 def read_captions(path):
+    """Read in the text file containing the captions(description)
+    # Parameters:
+         path: path to file
+    # Returns:
+        dictionary: keys=image name , values= original uncleaned descriptions
+    """
     caption_dict = {}
     with open(path, 'r') as f:
         for line in f:
@@ -20,6 +32,14 @@ def read_captions(path):
 
 
 def clean_description(dict_input):
+    """Cleans the original descriptions (captions).
+    # Parameters:
+        dict_input: dictionary containg keys=image names,
+                    value= uncleaned original descriptions
+    # Returns:
+        cleaned dictionary
+
+    """
     keys = []
     description = []
     description_final = defaultdict(list)
@@ -42,7 +62,8 @@ def clean_description(dict_input):
 
 
 def text_vocabulary(descriptions):
-    # build vocabulary of all unique words
+    """Creates a vocabulary of all unique words
+    """
     vocab = set()
     for key in descriptions.keys():
         [vocab.update(d.split()) for d in descriptions[key]]
@@ -60,5 +81,5 @@ if __name__ == "__main__":
     with open('description.json', 'w') as fp:
         json.dump(description_clean, fp)
 
-    # with open("vocabulary.txt", "wb") as fp:  # Pickling
-    #     pickle.dump(vocabulary, fp)
+    with open("vocabulary.pkl", "wb") as fp:  # Pickling
+        pickle.dump(vocabulary, fp)
