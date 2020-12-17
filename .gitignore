@@ -2,9 +2,12 @@
 __pycache__/
 *.py[cod]
 *$py.class
+*Flick*
 
 # C extensions
 *.so
+Power*
+not*
 
 # Distribution / packaging
 .Python
