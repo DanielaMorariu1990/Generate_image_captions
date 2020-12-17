@@ -8,6 +8,7 @@ __pycache__/
 *.so
 Power*
 not*
+second*
 
 # Distribution / packaging
 .Python
