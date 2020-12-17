@@ -1,3 +1,11 @@
+"""Creates model using Keras:
+input layer 1: image features, followed by 4 dense layers and 1 Dropout layer
+input layer 2: text (captions), embedding layer(calibrated via word2vec), 
+followed by 4 LSTM layers.
+These 2 models are added then togther, followed by 2 dense layers and one
+output layer.
+"""
+
 from tensorflow import keras
 
 
