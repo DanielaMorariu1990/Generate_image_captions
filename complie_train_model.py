@@ -40,6 +40,7 @@ train_data = create_trianing_data(
 # initialize model
 model_cap = create_model_img(max_length_caption, vocab_size, embedding_vectors)
 
+
 steps_per_epochs = len(train_descriptions)//32
 
 # compile model
