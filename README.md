@@ -1,8 +1,6 @@
 # Generate Image Captions
 
-<video  width="700" height="350" controls>
- <source src="https://github.com/DanielaMorariu1990/Generate_image_captions/blob/main/video.mp4" type="video/mp4">
- </video>
+<img src="https://github.com/lorenanda/movie-recommender/blob/main/demo.gif" width="700" height="350">
 
 ## Description
 
@@ -13,7 +11,7 @@ The program takes an image from the Flicker8 image set and outputs a description
 2. The image descriptions (text generations) have been trained on the Flicker8 captions. This could be extended ona lareged data set, like Flicker30, but for this one needs a better PC than mine :). The steps are however the same, as in this repo.
 
 I have used the following model arhitecture, as depicted in the picture below.
-<img src="https://github.com/DanielaMorariu1990/Generate_image_captions/blob/main/model_arhitecture.png" width="700" height="350">
+<img src="https://github.com/DanielaMorariu1990/Generate_image_captions/blob/main/model_arhitecture.PNG" width="700" height="350">
 
 The intreface is simple, and built in Flask (see gif)
 
