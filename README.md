@@ -37,4 +37,4 @@ In a terminal:
 6. Open the listed localhost http://127.0.0.1:5000/ in a browser.
 7. Try out some phothos!
 
-_The project was tested on Chrome and Firefox!_
+_The project was tested on Chrome, Firefox and Opera!_
