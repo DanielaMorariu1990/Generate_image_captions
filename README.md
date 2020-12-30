@@ -1,6 +1,6 @@
 # Generate Image Captions
 
-<img src="https://github.com/lorenanda/movie-recommender/blob/main/demo.gif" width="700" height="350">
+<img src="https://github.com/DanielaMorariu1990/Generate_image_captions/blob/main/demo.gif" width="700" height="350">
 
 ## Description
 
